@@ -11,7 +11,7 @@
                 type="text"
                 :placeholder="placeholder"
                 :value="value"
-                @change="handleChange"
+                @input="handleChange"
                 :options="[]"
                 label="name"
             />
@@ -34,14 +34,14 @@ export default {
     },
 
     methods: {
-        handleChange(event) {
+        handleChange: _.debounce(function (event) {
             this.$store.commit(`${this.resourceName}/updateFilterState`, {
                 filterClass: this.filterKey,
                 value: event.target.value,
             })
 
             this.$emit('change')
-        },
+        }, 300),
     },
 
     computed: {

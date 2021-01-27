@@ -10,7 +10,7 @@
 You can install the package in to a Laravel app that uses [Nova](https://nova.laravel.com) via composer:
 
 ```bash
-composer require reedware/nova-text-filter
+composer require kayacekovic/nova-text-filter
 ```
 
 ## Usage

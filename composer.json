@@ -1,5 +1,5 @@
 {
-    "name": "reedware/nova-text-filter",
+    "name": "kayacekovic/nova-text-filter",
     "description": "Adds a text filter component for resources and lenses.",
     "keywords": [
         "laravel",

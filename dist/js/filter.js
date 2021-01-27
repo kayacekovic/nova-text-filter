@@ -276,14 +276,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     methods: {
-        handleChange: function handleChange(event) {
+        handleChange: _.debounce(function (event) {
             this.$store.commit(this.resourceName + '/updateFilterState', {
                 filterClass: this.filterKey,
                 value: event.target.value
             });
 
             this.$emit('change');
-        }
+        }, 300)
     },
 
     computed: {
@@ -326,7 +326,7 @@ var render = function() {
           label: "name"
         },
         domProps: { value: _vm.value },
-        on: { change: _vm.handleChange }
+        on: { input: _vm.handleChange }
       })
     ])
   ])
